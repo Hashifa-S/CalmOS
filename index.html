@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="module" src="./script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+  <body style="background-image:url('./waterfall.png'); height: 100vh; background-size: cover; background-repeat: no-repeat; margin: 0px;">
+    <div id="welcome" style="border: solid; color: grey; backdrop-filter:blur(10px); width: 300px; border-radius: 16px; padding: 14px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    
+    <div class="closebutton" id="welcomeclose" style="position: absolute; top: 14px; left: 14px; cursor: pointer;"></div>
+    
+    <h1 style="margin: 0px 0px 12px 0px; text-align: center; color: lightpink; font-size: 22px;">Welcome to HashiOS</h1>
+    
+    <p style="color: lightcoral; margin: 0px; text-align: center;">
+        <dfn>HashiOS</dfn> is an <abbr title="Operating System">OS</abbr> where you can learn all about <b>Hashifa</b> which is me!
+    </p>
+
+</div>
+    <div 
+      style="display:flex; justify-content: space-between; background-color: rgba(0, 0, 0, 0.25); color:rgb(255, 255, 255);">
+      <p
+          style="margin-left: 16px; font-weight: 700; background-color: rgba(256, 256, 256, 0.125); padding: 4px 12px; border-radius: 16px;">
+            Have a great day!
+        </p>
+
+        <p id="timeElement"
+      style="margin-right: 16px; background-color: rgba(256, 256, 256, 0.125); padding: 4px 12px; border-radius: 16px;">
+      ippotime
+      </p>
+    
+    <p style="cursor: pointer; margin-left: 20px; background-color: rgba(256, 256, 256, 0.25); padding: 4px 12px; border-radius: 16px; user-select: none;" id="welcomeopen">
+    <b><dfn>HashiOS</dfn></b>
+</p>
+    </div>
+</div>
+<div class="window" id="notesWindow" style="top: calc(50% - 150px); left: calc(50% - 200px); width: 400px; height: 300px; display: none; background: rgba(255,255,255,0.85); border-radius: 12px; overflow: hidden;">
+  <div class="closebutton" id="notesclose" style="position: absolute; top: 14px; left: 14px; cursor: pointer;"></div>
+  <div class="windowheader" id="notesheader" style="display:flex; justify-content: center; align-items:center; background: rgba(0,0,0,0.2); padding: 6px 10px;">
+    <span style="color: white; font-weight: bold;">Hashi Notes</span>
+  </div>
+  <textarea id="notesTextarea" placeholder="Welcome! Take notes freely..." style="display: block; width: 100%; height: calc(100% - 32px); border: none; outline: none; resize: none; padding: 12px; box-sizing: border-box; font-family: inherit; font-size: 15px; background: transparent;"></textarea>
+</div>
+  <div style="display: flex; height: calc(100% - 32px);">
+    <div id="mainContent" style="flex: 1; padding: 10px; overflow-y: auto;"></div>
+  </div>
+  <div class="window" id="calcWindow" style="top: calc(50% - 150px); left: calc(50% - 125px); width: 250px; display: none;">
+    <div class="closebutton" id="calcclose"></div>
+  <div class="windowheader" id="calcheader">
+    <p class="headertext"; style="cursor: pointer;" id="calcOpen">Calculator</p>
+  </div>
+
+  <input type="text" id="calcScreen" readonly style="width: 100%; box-sizing: border-box; font-size: 24px; padding: 10px; border: none; outline: none; text-align: right; background: transparent; color: grey;">
+
+ <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 10px;"></div>
+   <button class="calcButton" data-value= "7">7</button>
+   <button class="calcButton" data-value= "8">8</button>
+   <button class="calcButton" data-value= "9">9</button>
+   <button class="calcButton" data-value= "/">/</button>
+
+   <button class="calcButton" data-value= "4">4</button>
+   <button class="calcButton" data-value= "5">5</button>
+   <button class="calcButton" data-value= "6">6</button>
+   <button class="calcButton" data-value= "*">*</button>
+
+   <button class="calcButton" data-value= "1">1</button>
+   <button class="calcButton" data-value= "2">2</button>
+   <button class="calcButton" data-value= "3">3</button>
+   <button class="calcButton" data-value= "-">-</button>
+
+   <button class="calcButton" data-value= "0">0</button>
+   <button class="calcButton" data-value= ".">.</button>
+   <button class="calcEquals">=</button>
+   <button class="calcButton" data-value= "+">+</button>
+
+   <button id="calcClear" style="grid-column: span 4;">C</button>
+   </div>
+</div>
+<div id="taskbar" style="position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); width: max-content; display: flex; align-items: center; background-color: rgba(40, 40, 40, 0.4); padding: 8px 16px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(4px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); z-index: 9999;">
+    
+    <div id="taskbarApps" style="display: flex; gap: 12px; align-items: center;">
+        <div class="taskbar-app" id="notesTaskbarIcon" style="width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s;" title="Hashi Notes">
+            <img src="./notes.png" style="width: 48px; height: 48px; border-radius: 16px;">
+        </div>
+        </div>
+    <div id="taskbarApps" style="display: flex; gap: 12px; align-items: center;">
+        <div class="taskbar-app" id="calcTaskbarIcon" style="width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s;" title="Calculator">
+            <img src="./calculator.png" style="width: 48px; height: 48px; border-radius: 16px;">
+        </div>
+</div>
+      <script src="script.js?v=5"></script>
+  </body>
+
+</html>
