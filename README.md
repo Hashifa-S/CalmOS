@@ -36,4 +36,4 @@ HashiOS is actively being developed! Here are the features coming down the pipel
 
 ## Local Development
 
-To run HashiOS locally on your machine, first clone the repository by running git clone https://github.com/YOUR-USERNAME/HashiOS.git in your terminal and move into the project directory with cd HashiOS. Next, install the necessary project dependencies using npm install, and then start the local development server by running npm run dev. Finally, just open the local URL (usually http://localhost:5173 or similar) provided in your terminal to view the OS in your browser.
+To run HashiOS locally on your machine, first clone the repository by running git clone https://github.com/Hashifa-S/CalmOS.git in your terminal and move into the project directory with cd HashiOS. Next, install the necessary project dependencies using npm install, and then start the local development server by running npm run dev. Finally, just open the local URL provided in your terminal to view the OS in your browser.
